@@ -2,9 +2,9 @@ using System;
 
 namespace 偶奇判定
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(String[] args)
         {
             Console.Write("整数を入力してください：");
 
