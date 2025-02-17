@@ -16,7 +16,11 @@ class Program
 
         int[] array = new int[n]; // ユーザーが指定した要素数で配列を作成
 
-        // 配列の各要素を入力
+        // 合計、最大値、最小値を初期化
+        int sum = 0;
+        int max = int.MinValue;
+        int min = int.MaxValue;
+
         for (int i = 0; i < n; i++)
         {
             Console.Write($"{i} 番目の要素を入力してください: ");
@@ -24,6 +28,10 @@ class Program
             {
                 Console.Write("整数を入力してください: ");
             }
+
+            sum = sum + array[i]; // 配列の要素を合計
+            if (array[i] > max) max = array[i];
+            if (array[i] < min) min = array[i];
         }
 
         // 配列全体を表示
@@ -34,13 +42,15 @@ class Program
         // 先頭要素
         Console.WriteLine("先頭要素: " + array[0]);
         // 末尾要素
-        Console.WriteLine("末尾要素: " + array[array.Length -1]);
-        }
+        Console.WriteLine("末尾要素: " + array[array.Length - 1]);
+
+        // 合計
+        Console.WriteLine("合計: " + sum);
+        // 最大値
+        Console.WriteLine("最大値: " + max);
+        // 最小値
+        Console.WriteLine("最小値: " + min);
+        // 平均
+        Console.WriteLine("平均: " + (double)sum / array.Length);
     }
-
-
-
-/*配列の要素数 n を入力 → ユーザーが入力した数だけの配列を作成。
-各要素を入力できるようにする → for ループで array[i] にユーザーの入力を格納。
-配列全体を表示 → string.Join(", ", array) を使用。
-インデックス付きで個別表示 → for ループで要素を表示。*/
+}
