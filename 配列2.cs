@@ -9,6 +9,7 @@ class Program
         int n;
 
         // ユーザーが正しい整数を入力するまで繰り返す
+        // TryParse は、特定の型 (int, double, DateTime など) に変換できるかどうかを確認し、成功すれば変換結果を変数に格納し、失敗すれば false を返します。
         while (!int.TryParse(Console.ReadLine(), out n) || n <= 0)
         {
             Console.Write("正の整数を入力してください: ");
